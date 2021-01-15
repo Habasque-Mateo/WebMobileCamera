@@ -1,4 +1,4 @@
-var constraints = { video: { facingMode: "user" }, audio: false };
+var constraints = { video: { facingMode: "environment" }, audio: false };
 
 const cameraView = document.querySelector("#camera--view");
 const cameraOutput = document.querySelector("#camera--output");
@@ -7,7 +7,7 @@ const cameraTrigger = document.querySelector("#camera--trigger");
 
 window.addEventListener("load", cameraStart, false);
 
-cameraTrigger.onClick = function() {
+cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
